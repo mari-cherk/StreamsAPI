@@ -106,7 +106,7 @@ public class Streams {
         Stream<String> rows3 = Files.lines(Paths.get("src/data.txt"));
         Map<String, Integer> map = new HashMap<>();
         map = rows3
-                .map(x -> x.split(","))
+                .map(x -> x.split(" "))
                 .filter(x -> x.length == 3)
                 .filter(x -> Integer.parseInt(x[1]) > 15)
                 .collect(Collectors.toMap(
